@@ -14,21 +14,26 @@ html {
 
 /*header*/
 header {
-    
-    background-image: url("../img/banner.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; 
+    background-color: #5C87A7;
     min-height: 100vh;
 }
 
-mark {
-    background-color: rgba(255,220,101,255);
-    padding: 2px;
+.graphic {
+    max-width: 700px;
+}
+.graphic img {
+    display: block;
+    max-width: 100%;
+    transition: .3s;
+}
+
+.graphic img:hover {
+    transform: scale(1.05);
+    transition: .3s;
 }
 
 .strip-header {
-    background-color: rgba(115, 89, 67, 0.5);
+    background-color: rgba( 38, 85, 115, 0.7);
     position: relative;
 }
 
@@ -64,19 +69,33 @@ mark {
     text-decoration: none;
 }
 
+.menu nav ul li a:hover {
+    color: #ffd166;
+}
+
 #introducao {
     max-width: 1240px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
     margin: 0 auto;
-    min-height: calc(100vh - 90px);    
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 90px);
+}
+
+.information {
+    max-width: 540px;
+    max-height: fit-content;
 }
 
 .title-product {
     color: #fff;
-    font-size: 3.25rem;
-    width: 65%;
+    font-size: 3rem;
+}
+
+.subtitle-product {
+    color: #265573;
+    font-size: 2.5rem;
 }
 
 .tagline {
@@ -89,11 +108,6 @@ mark {
     padding-top: 10rem;
 }
 
-.tagline span {
-    font-size: 6.0rem;
-    padding: -10px;
-}
-
 /*Footer*/
 
 footer {
@@ -101,7 +115,7 @@ footer {
 }
 
 .strip-footer {
-    background-color: #735943;
+    background-color: #265573;
 }
 
 .strip-footer-content {
@@ -170,7 +184,7 @@ footer {
     margin: 0 auto;
     width: 70px;
     height: 9px;
-    background-color: #A66946;
+    background-color: #265573;
 }
 /*planos*/
 .info-tag, .card {
@@ -191,21 +205,14 @@ footer {
     margin: 20px 0;
 }
 
-.info-tag:nth-of-type(4n+1){
-    border-color: #735943;
+.info-tag:nth-of-type(2n+1){
+    border-color: #265573;
 }
 
-.info-tag:nth-of-type(4n+2){
-    border-color: #BF9B7A;
+.info-tag:nth-of-type(2n){
+    border-color: #5C87A7;
 }
 
-.info-tag:nth-of-type(4n+3){
-   border-color: #A66946;
-}
-
-.info-tag:nth-of-type(4n+4){
-    border-color: #D9D0C1;
-}
 
 .image-tag {
     display: block;
@@ -280,7 +287,7 @@ footer {
     padding: 7px 47px;
     text-align: center;
     margin: 12px auto;
-    background-color: #A66946;
+    background-color: #265573;
     border: unset;
     font-size: 1.5rem;
     color: #fff;
@@ -311,7 +318,7 @@ footer {
     font-size: 1rem;
     font-weight: bold;
     margin-right: 5px;
-    color: #BF9B7A;
+    color: #5C87A7;
 }
 
 .recomendado {
@@ -319,7 +326,7 @@ footer {
     left: 0;
     min-width: 100%;
     position: absolute;
-    background-color: #A66946;
+    background-color: #265573;;
     bottom: 0;
     padding: 7px;
     text-align: center;
@@ -367,7 +374,7 @@ footer {
 .duvidas form textarea:focus, 
 .duvidas form input:focus{
     outline: none;
-    border: 2px solid #A66946;
+    border: 2px solid #5C87A7;
     border-radius: unset;
 }
 
@@ -391,7 +398,7 @@ footer {
     display: inline-block; 
     width: 1em;
     margin-left: 0rem;
-    color: #A66946;
+    color: #5C87A7;
 }
 
 .act-menu {
@@ -412,12 +419,18 @@ footer {
 
 @media screen and (min-width: 769px) and  (max-width: 1290px) {
     .strip-header-content, 
-    .title-product, 
+    .title-product,
+    .subtitle-product,
     .tagline,
     #produto,
     #planos,
     #contato {
         margin: 0 20px;
+    }
+
+    #introducao {
+        text-align: center;
+        padding-top: 20px;
     }
 
     .content {
@@ -433,6 +446,7 @@ footer {
 
     .strip-header-content, 
     .title-product, 
+    .subtitle-product,
     .tagline,
     #produto,
     #planos,
@@ -440,11 +454,17 @@ footer {
         margin: 0 20px;
     }  
 
-    .title-product {
-        font-size: 1.76rem;
+    #introducao {
+        text-align: center;
     }
-    .tagline span {
-        font-size: 3.4rem;
+
+    .title-product
+    .title-product {
+        font-size: 2rem;
+    }
+
+    .subtitle-product {
+        font-size: 1.75rem;
     }
 
     .content {
@@ -485,12 +505,8 @@ footer {
         z-index: 2;
     }
     
-    .mobile-menu nav {
-        background-color: rgb(115, 89, 67);
-    }
-
-    .strip-header {
-        background-color: rgb(115, 89, 67);
+    .mobile-menu nav,  .strip-header {
+        background-color: rgba( 38, 85, 115, 0.7);
     }
     
     .mobile-menu nav ul {
